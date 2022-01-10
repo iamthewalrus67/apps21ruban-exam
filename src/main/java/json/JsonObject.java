@@ -16,7 +16,6 @@ public class JsonObject extends Json {
 
     @Override
     public String toJson() {
-        // ToDo
         StringBuilder result = new StringBuilder();
         for (Map.Entry<String, Json> mapEntry: hashMap.entrySet()) {
             String key = mapEntry.getKey();
@@ -29,20 +28,16 @@ public class JsonObject extends Json {
     }
 
     public void add(JsonPair... jsonPairs) {
-        // ToDo
-        // Might need to check if key exists
         for (JsonPair jsonPair: jsonPairs) {
             hashMap.put(jsonPair.key, jsonPair.value);
         }
     }
 
     public Json find(String name) {
-        // ToDo
         return hashMap.get(name);
     }
 
     public JsonObject projection(String... names) {
-        // ToDo
         JsonObject jsonObject = new JsonObject();
         for (String name: names) {
             if (hashMap.get(name) == null) {
